@@ -33,16 +33,22 @@ nav h1 a{
     color: var(--secondary-color);
 }
 
+nav a{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
 nav ul{
+    padding-left: 0;
     list-style-type: none;
     display: flex;
 }
 
-nav ul li{
+nav ul li a{
     padding: 3px 10px;
 }
 
-nav ul li:hover{
+nav ul li a:hover{
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border-radius: 5px;
@@ -51,15 +57,19 @@ nav ul li:hover{
 }
 
 .mainbtn{
+    margin: 0px 10px;
     padding: 6px 12px;
     background: none;
     outline: var(--secondary-color) 10px;
     cursor: pointer;
 }
 
+.mainbtn:hover a{
+    color: var(--primary-color);
+}
+
 .mainbtn:hover{
     background-color: var(--secondary-color);
-    color: var(--primary-color);
     outline: var(--primary-color) 10px;
 }
 
@@ -137,7 +147,7 @@ footer{
     text-align: center;
     color: white;
     margin: 4px 0;
-    animation: fadeInAnimation ease-out .6s;
+    animation: fadeInAnimation ease-out .7s;
 }
 
 @keyframes fadeInAnimation {

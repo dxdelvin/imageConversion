@@ -1,5 +1,5 @@
 import os
-from flask import Flask, flash, request, render_template, redirect, url_for
+from flask import Flask, flash, request, render_template, redirect, url_for, Markup
 from werkzeug.utils import secure_filename
 import cv2
 
@@ -36,6 +36,26 @@ def convert_file(file,opertation):
 
 @app.route('/')
 def hello_world():
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    flash("About Page is Under Development :D")
+    return render_template('index.html')
+
+@app.route('/home')
+def home():
+    flash("Home Page is Under Development :D")
+    return render_template('index.html')
+
+@app.route('/login')
+def login():
+    flash("Login Page is Under Development :D")
+    return render_template('index.html')
+
+@app.route('/signup')
+def signup():
+    flash("Signup Page is Under Development :D")
     return render_template('index.html')
 
 @app.route('/edit',methods=['GET','POST'])
