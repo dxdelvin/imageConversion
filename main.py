@@ -2,6 +2,7 @@ import os
 from flask import Flask, flash, request, render_template, redirect, url_for, Markup
 from werkzeug.utils import secure_filename
 import cv2
+from flask_frozen import Freezer
 
 UPLOAD_FOLDER = './static/user_uploads/'
 CONVERTED_UPLOADS = "./static/converted_uploads/"
@@ -12,6 +13,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 app = Flask(__name__)
+freezer = Freezer(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = "fwj#ok12"
 
@@ -83,4 +85,5 @@ def edit():
         else:
             return render_template("index.html",error="Wrong File Extension Submitted")
 
-app.run(debug=True, port=500)
+if __name__ == "__main__":
+    freezer.freeze()
