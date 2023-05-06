@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="./static/image/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Img Convertor</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+      </ul>
+      <div>
+        <h1><a href="#">EDITOR IMAGE</a></h1>
+      </div>
+      <div class="user-btns">
+        <button class="mainbtn">Sign Up</button>
+        <button class="mainbtn">Log In</button>
+      </div>
+    </nav>
+
+    {% with messages = get_flashed_messages() %} {% if messages %}
+      {% for message in messages %}
+      <p class="final">{{ message | safe }}</p>
+      {% endfor %}
+    {% endif %} {% endwith %}
+
+    <section class="container">
+      <div>
+        <h1>Convert Your Images</h1>
+        <p>
+          Click on the file option and select your image file and from the
+          dropdown menu you can select the options to convert your image into
+        </p>
+      </div>
+      <div class="entry-form">
+        <form action="/edit" , enctype="multipart/form-data" , method="POST">
+          <label for="file">Select Your File</label>
+          <input name="file" type="file" />
+          <label for="file-type">Choose The Conversion You Want</label>
+          <select id="file-type" name="file-type">
+            <option value="png">Png</option>
+            <option value="jpeg">Jpeg</option>
+            <option value="gs">Grayscale</option>
+            <option value="webp">Webp</option>
+          </select>
+          <button id="submitImg" type="submit" value="Submit">Submit</button>
+        </form>
+        <p id="errorMsg">{{error}}</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Made with Love 💖 by DX</p>
+    </footer>
+
+    <script>
+      let error = document.querySelector("#errorMsg");
+      error.style.color = "red";
+      error.style.fontWeight = "900";
+      setTimeout(() => {
+        error.style.transition = "opacity ease .5s";
+        error.style.opacity = 0;
+      }, 2000);
+    </script>
+  </body>
+</html>

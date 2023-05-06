@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root{
+    --primary-color:rgb(121, 206, 209);
+    --secondary-color:rgb(4, 34, 35);
+}
+
+body, html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color:#fff6e8;
+}
+
+nav{
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 0 0 var(--secondary-color);
+}
+
+nav h1{
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 30px;
+    letter-spacing: 12px;
+}
+nav h1 a{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li{
+    padding: 3px 10px;
+}
+
+nav ul li:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    transition: border-radius ease .7s;
+    transition: background-color ease .4s;
+}
+
+.mainbtn{
+    padding: 6px 12px;
+    background: none;
+    outline: var(--secondary-color) 10px;
+    cursor: pointer;
+}
+
+.mainbtn:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    outline: var(--primary-color) 10px;
+}
+
+.container{
+    padding: 20px 20vw;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding: 20px 40px;
+    border: solid var(--secondary-color) 3px;
+    box-shadow: 3px 3px 0 0 var(--secondary-color);
+}
+
+form label{
+    color: var(--secondary-color);
+    font-size: .9rem;
+    font-weight: 700;
+    margin: 15px 0px;
+    border-bottom :3px solid var(--secondary-color) ;
+}
+
+input::file-selector-button {
+    background:none;
+    padding: 0.5em;
+    border: solid var(--secondary-color) 2px;
+    margin-right: 10px;
+}
+
+input::file-selector-button:hover {
+    background:var(--secondary-color);
+    border: solid var(--primary-color) 2px;
+    color: var(--primary-color);
+    border-radius: 5px;
+}
+
+#file-type{
+    background: none;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 2px 2px 0 0 var(--secondary-color);
+    padding: 5px 10px;
+}
+
+#file-type:hover{
+    border-radius:3px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+#submitImg{
+    margin: 35px auto;
+    padding: 6px 12px;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    outline: var(--secondary-color) 10px;
+    cursor: pointer;
+}
+
+footer{
+    padding: 2px 4px;
+    box-shadow: 0 -5px var(--secondary-color);
+    text-align: center;
+    background-color: var(--primary-color);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+}
+
+.final{
+    background: #f07474;
+    padding: 8px 16px;
+    text-align: center;
+    color: white;
+    margin: 4px 0;
+    animation: fadeInAnimation ease-out .6s;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.final a{
+    color: var(--secondary-color);
+    font-weight: 900;
+}
